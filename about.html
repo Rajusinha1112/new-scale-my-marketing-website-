@@ -193,7 +193,7 @@ p { color: var(--grey); line-height: 1.75; margin: 0 0 16px; font-size: 16px; fo
 .stats-strip { background: var(--dark-2); border: 1px solid rgba(255,255,255,.1); color: var(--white); border-radius: var(--radius); padding: 52px 40px; }
 .bg-dark .stats-strip { background: var(--dark-3); }
 .stat { text-align: center; }
-.stat strong { display: block; font-family: var(--font-display); font-size: 64px; font-weight: 700; color: var(--white); line-height: 1; }
+.stat strong { display: block; font-family: var(--font-display); font-size: 80px; font-weight: 700; color: var(--white); line-height: 1; }
 .stat span { font-size: 13px; color: rgba(255,255,255,.55); text-transform: uppercase; letter-spacing: .04em; font-weight: 600; }
 .stat-note { text-align:center; font-size:12px; color: rgba(255,255,255,.35); margin-top: 28px; font-family: var(--font); }
 
@@ -306,6 +306,7 @@ p { color: var(--grey); line-height: 1.75; margin: 0 0 16px; font-size: 16px; fo
   content: ""; position: absolute; top: 50%; right: -14px; transform: translateY(-50%);
   width: 1px; height: 64px; background: rgba(255,255,255,.2);
 }
+
 @media (max-width: 640px) { .stat:not(:last-child)::after { display: none; } }
 
 /* ---------- Trusted quote/checklist band ---------- */
@@ -504,10 +505,10 @@ p { color: var(--grey); line-height: 1.75; margin: 0 0 16px; font-size: 16px; fo
     <div class="container">
       <div class="grid g-4">
         <!-- DEMO STATS — replace with your real figures -->
-        <div class="stat" data-aos="zoom-in" data-aos-delay="0"><strong><span data-count="240" data-suffix="+">0</span></strong><span>Campaigns Launched</span></div>
-        <div class="stat" data-aos="zoom-in" data-aos-delay="100"><strong><span data-count="60" data-suffix="+">0</span></strong><span>Active Clients</span></div>
-        <div class="stat" data-aos="zoom-in" data-aos-delay="200"><strong><span data-count="48" data-suffix="h">0</span></strong><span>Avg. Response Time</span></div>
-        <div class="stat" data-aos="zoom-in" data-aos-delay="300"><strong><span data-count="98" data-suffix="%">0</span></strong><span>Client Retention</span></div>
+        <div class="stat" data-aos="zoom-in" data-aos-delay="0"><strong><span style="font-size: 80px;" data-count="240" data-suffix="+">0</span></strong><span>Campaigns Launched</span></div>
+        <div class="stat" data-aos="zoom-in" data-aos-delay="100"><strong><span style="font-size: 80px;" data-count="60" data-suffix="+">0</span></strong><span>Active Clients</span></div>
+        <div class="stat" data-aos="zoom-in" data-aos-delay="200"><strong><span style="font-size: 80px;" data-count="48" data-suffix="h">0</span></strong><span>Avg. Response Time</span></div>
+        <div class="stat" data-aos="zoom-in" data-aos-delay="300"><strong><span style="font-size: 80px;" data-count="98" data-suffix="%">0</span></strong><span>Client Retention</span></div>
       </div>
     </div>
   </section>
