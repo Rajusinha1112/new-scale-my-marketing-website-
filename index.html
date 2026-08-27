@@ -1,0 +1,1563 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Scale My Marketing — Performance & Digital Marketing Agency in Delhi</title>
+<meta name="description" content="Scale My Marketing is a performance marketing and digital marketing agency in Delhi helping fitness coaches, wellness practitioners, financial advisors and D2C brands turn marketing spend into predictable growth." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Teko:wght@400;500;600;700&family=Rubik:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ==========================================================================
+   Scale My Marketing — Design System
+   Matched to reference site: dark charcoal + amber, Teko/Rubik, notched
+   buttons, uppercase nav with underline, alternating dark/light panels.
+   ========================================================================== */
+
+:root {
+  --dark: #1c1e22;
+  --dark-2: #222429;
+  --dark-3: #2b2e34;
+  --accent: #ffaa17;
+  --accent-dim: #e6960a;
+  --ink: #1c1e22;
+  --grey: #6b7280;
+  --grey-light: #9aa0ad;
+  --on-dark: rgba(255, 255, 255, 0.68);
+  --on-dark-strong: #ffffff;
+  --bg-soft: #f4f5f8;
+  --bg-soft-2: #eef0f6;
+  --line: #e7e9f2;
+  --line-dark: rgba(255, 255, 255, 0.1);
+  --white: #ffffff;
+  --radius: 10px;
+  --radius-sm: 6px;
+  --shadow: 0 20px 45px -20px rgba(0, 0, 0, 0.35);
+  --shadow-sm: 0 10px 24px -14px rgba(0, 0, 0, 0.3);
+  --font-display: "Teko", "Oswald", "Segoe UI", system-ui, sans-serif;
+  --font: "Rubik", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --notch: 16px;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: var(--font);
+  color: var(--ink);
+  background: var(--dark);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+img { max-width: 100%; display: block; }
+
+a { text-decoration: none; color: inherit; }
+
+.container { width: 100%; max-width: 1180px; margin: 0 auto; padding: 0 24px; }
+
+section { padding: 96px 0; }
+@media (max-width: 768px) { section { padding: 64px 0; } }
+
+.bg-dark { background: var(--dark); color: var(--on-dark); }
+.bg-soft { background: var(--bg-soft); }
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 14px;
+}
+.eyebrow::before {
+  content: "";
+  width: 26px; height: 2px;
+  background: var(--accent);
+  display: inline-block;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  line-height: 1.05;
+  margin: 0 0 16px;
+  color: var(--ink);
+  letter-spacing: 0.2px;
+  text-transform: uppercase;
+}
+.bg-dark h1, .bg-dark h2, .bg-dark h3, .bg-dark h4 { color: var(--on-dark-strong); }
+h1 { font-size: clamp(40px, 6vw, 68px); }
+h2 { font-size: clamp(30px, 4.4vw, 46px); }
+h3 { font-size: 23px; text-transform: none; font-weight: 600; }
+h4 { font-size: 19px; text-transform: none; }
+.dot-accent { color: var(--accent); }
+
+p { color: var(--grey); line-height: 1.75; margin: 0 0 16px; font-size: 16px; font-family: var(--font); }
+.bg-dark p { color: var(--on-dark); }
+
+.section-head { max-width: 640px; margin: 0 auto 56px; text-align: center; }
+.section-head p { margin: 0; }
+
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+  padding: 18px 42px; border-radius: var(--radius-sm); font-family: var(--font-display);
+  font-weight: 500; font-size: 17px; letter-spacing: 0.06em; text-transform: uppercase;
+  border: none; cursor: pointer; transition: transform .25s ease, box-shadow .25s ease, background .25s ease;
+  white-space: nowrap; position: relative;
+  clip-path: polygon(0 0, calc(100% - var(--notch)) 0, 100% var(--notch), 100% 100%, 0 100%);
+}
+.btn-primary { background: var(--accent); color: var(--dark); }
+.btn-primary:hover { background: var(--accent-dim); transform: translateY(-2px); }
+.btn-outline { background: transparent; color: var(--on-dark-strong); border: 1px solid var(--line-dark); clip-path: none; border-radius: var(--radius-sm); }
+.btn-outline:hover { border-color: var(--accent); color: var(--accent); }
+.bg-soft .btn-outline, body.subpage .btn-outline, .form-card .btn-outline { color: var(--ink); border-color: var(--line); }
+.btn-light { background: var(--white); color: var(--dark); clip-path: none; border-radius: var(--radius-sm); }
+.btn-light:hover { transform: translateY(-2px); }
+.btn-block { width: 100%; }
+
+/* ---------- Header ---------- */
+.site-header {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 999;
+  padding: 26px 0; transition: all .3s ease;
+  background: transparent;
+  border-bottom: 1px solid transparent;
+}
+.site-header.is-scrolled { background: rgba(20, 21, 25, 0.95); backdrop-filter: blur(10px); padding: 12px 0; box-shadow: var(--shadow-sm); border-bottom-color: rgba(255,255,255,.06); }
+.site-header .container { display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+.brand { display: flex; align-items: center; gap: 12px; font-family: var(--font-display); font-weight: 600; font-size: 24px; letter-spacing: .02em; text-transform: uppercase; color: var(--on-dark-strong); }
+.brand .badge {
+  width: 42px; height: 42px; border-radius: 50%; background: var(--accent); color: var(--dark);
+  display: flex; align-items: center; justify-content: center; font-family: var(--font-display);
+  font-weight: 600; font-size: 20px; flex: none;
+}
+
+.nav { display: flex; align-items: center; gap: 24px; }
+.nav a {
+  font-family: var(--font); font-weight: 500; font-size: 13.5px; letter-spacing: .04em; text-transform: uppercase;
+  color: rgba(255,255,255,.78); position: relative; padding: 6px 0 10px;
+  border-bottom: 2px solid transparent;
+}
+.nav a.active, .nav a:hover { color: var(--on-dark-strong); border-bottom-color: var(--accent); }
+.nav-cta { display: flex; align-items: center; gap: 16px; }
+.call-chip { display: flex; align-items: center; gap: 12px; }
+.call-ic { width: 40px; height: 40px; border-radius: 50%; background: var(--accent); display: flex; align-items: center; justify-content: center; flex: none; }
+.call-chip em { display: block; font-style: normal; font-family: var(--font); font-size: 10.5px; text-transform: uppercase; letter-spacing: .05em; color: rgba(255,255,255,.45); }
+.call-chip strong { display: block; font-family: var(--font-display); font-weight: 500; font-size: 17px; color: var(--white); letter-spacing: .02em; white-space: nowrap; }
+.call-chip em { white-space: nowrap; }
+@media (max-width: 1200px) { .call-chip em { display: none; } }
+@media (max-width: 992px) { .call-chip { display: none; } }
+.nav-toggle { display: none; }
+
+@media (max-width: 992px) {
+  .nav { position: fixed; top: 0; right: -320px; height: 100vh; width: 300px; background: var(--dark-2);
+    flex-direction: column; align-items: flex-start; padding: 100px 32px 32px; gap: 22px; transition: right .35s ease;
+    box-shadow: -20px 0 60px rgba(0,0,0,.4); }
+  .nav.open { right: 0; }
+  .nav a { color: var(--on-dark) !important; font-size: 16px; }
+  .nav-toggle { display: flex; flex-direction: column; gap: 5px; width: 30px; cursor: pointer; z-index: 1001; background:none; border:none; padding:6px; color: var(--on-dark-strong); }
+  .nav-toggle span { height: 2px; background: currentColor; border-radius: 2px; transition: all .25s ease; }
+  .nav-cta .btn-outline { display: none; }
+  .nav-scrim { position: fixed; inset: 0; background: rgba(10,10,12,.6); opacity: 0; pointer-events: none; transition: opacity .3s ease; z-index: 998; }
+  .nav-scrim.open { opacity: 1; pointer-events: auto; }
+}
+
+/* ---------- Hero ---------- */
+.hero {
+  position: relative; min-height: 92vh; display: flex; align-items: center;
+  background: var(--dark); color: var(--on-dark-strong); overflow: hidden; padding-top: 120px;
+}
+.hero::before {
+  content: ""; position: absolute; inset: 0;
+  background-image: radial-gradient(rgba(255,255,255,.07) 1px, transparent 1px);
+  background-size: 24px 24px; opacity: .5; mask-image: linear-gradient(180deg, black, transparent 80%);
+}
+.hero-glow { position: absolute; width: 620px; height: 620px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(255,170,23,.22), transparent 70%); filter: blur(10px); }
+.hero-glow.one { top: -220px; right: -200px; }
+.hero-glow.two { bottom: -260px; left: -200px; background: radial-gradient(circle, rgba(255,170,23,.12), transparent 70%); }
+.hero .container { position: relative; z-index: 2; padding-left: 90px; }
+@media (max-width: 768px) { .hero .container { padding-left: 24px; } }
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 8px; padding: 8px 18px; border-radius: 100px;
+  background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.14); font-size: 12.5px; font-weight: 600;
+  letter-spacing: .06em; text-transform: uppercase; margin-bottom: 28px; color: rgba(255,255,255,.85);
+}
+.hero-badge .pulse { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 0 rgba(255,170,23,.6); animation: pulse 2s infinite; }
+@keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(255,170,23,.55);} 70% { box-shadow: 0 0 0 10px rgba(255,170,23,0);} 100% { box-shadow: 0 0 0 0 rgba(255,170,23,0);} }
+.hero h1 { color: var(--white); max-width: 800px; }
+.hero h1 .accent { color: var(--accent); }
+.hero p.lead { color: rgba(255,255,255,.62); font-size: 18px; max-width: 560px; font-family: var(--font); }
+.hero-actions { display: flex; gap: 16px; margin-top: 34px; flex-wrap: wrap; }
+.hero-trust { display: flex; gap: 0; margin-top: 68px; flex-wrap: wrap; border-top: 1px solid rgba(255,255,255,.1); padding-top: 32px; max-width: 640px; }
+.hero-trust div { padding-right: 40px; }
+.hero-trust div strong { display: block; font-family: var(--font-display); font-size: 34px; font-weight: 600; color: var(--white); }
+.hero-trust div span { font-size: 12.5px; color: rgba(255,255,255,.5); text-transform: uppercase; letter-spacing: .04em; }
+
+.hero-side {
+  position: absolute; left: 24px; top: 0; bottom: 0; display: flex; flex-direction: column;
+  align-items: center; justify-content: flex-end; gap: 26px; padding-bottom: 70px; z-index: 3;
+}
+.hero-side a { writing-mode: vertical-rl; font-size: 11.5px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: rgba(255,255,255,.5); }
+.hero-side a:hover { color: var(--accent); }
+.hero-side .rule { width: 1px; height: 60px; background: rgba(255,255,255,.2); }
+@media (max-width: 768px) { .hero-side { display: none; } }
+
+/* ---------- Page hero (subpages) ---------- */
+.page-hero {
+  background: var(--dark); color: var(--on-dark-strong); padding: 190px 0 80px; position: relative; overflow:hidden;
+}
+.page-hero::before { content:""; position:absolute; inset:0; background-image: radial-gradient(rgba(255,255,255,.06) 1px, transparent 1px); background-size: 22px 22px; opacity:.5; }
+.page-hero .container { position: relative; z-index:2; }
+.page-hero h1 { color: var(--white); margin-bottom: 12px; }
+.crumb { color: rgba(255,255,255,.5); font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: .06em; }
+.crumb a { color: rgba(255,255,255,.85); }
+.crumb .sep { margin: 0 8px; opacity: .5; }
+
+/* ---------- Cards / grids ---------- */
+.grid { display: grid; gap: 28px; }
+.g-3 { grid-template-columns: repeat(3, 1fr); }
+.g-4 { grid-template-columns: repeat(4, 1fr); }
+.g-2 { grid-template-columns: repeat(2, 1fr); }
+@media (max-width: 992px) { .g-3, .g-4 { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 640px) { .g-3, .g-4, .g-2 { grid-template-columns: 1fr; } }
+
+.service-card {
+  background: var(--white); border: 1px solid var(--line); border-radius: var(--radius);
+  padding: 38px 30px; transition: all .3s ease; height: 100%; position: relative;
+}
+.bg-dark .service-card { background: var(--dark-2); border-color: rgba(255,255,255,.08); }
+.service-card:hover { transform: translateY(-6px); box-shadow: var(--shadow); border-color: var(--accent); }
+.service-icon {
+  width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
+  background: var(--accent); color: var(--dark); font-size: 24px; margin-bottom: 24px;
+}
+.service-icon svg { stroke: var(--dark) !important; }
+.service-card h3 { margin-bottom: 10px; text-transform: none; }
+.service-card ul { list-style: none; padding: 0; margin: 18px 0 0; }
+.service-card ul li { font-size: 14px; color: var(--grey); padding-left: 24px; position: relative; margin-bottom: 10px; font-family: var(--font); }
+.bg-dark .service-card ul li { color: var(--on-dark); }
+.service-card ul li::before { content: "✓"; position: absolute; left: 0; color: var(--accent); font-weight: 700; }
+.service-card a.card-link { display: inline-flex; align-items: center; gap: 6px; margin-top: 18px; font-family: var(--font); font-weight: 700; font-size: 13.5px; text-transform: uppercase; letter-spacing: .04em; color: var(--ink); }
+.bg-dark .service-card a.card-link { color: var(--white); }
+.service-card a.card-link:hover { color: var(--accent); }
+
+.stats-strip { background: var(--dark-2); border: 1px solid rgba(255,255,255,.1); color: var(--white); border-radius: var(--radius); padding: 52px 40px; }
+.bg-dark .stats-strip { background: var(--dark-3); }
+.stat { text-align: center; }
+.stat strong { display: block; font-family: var(--font-display); font-size: 64px; font-weight: 700; color: var(--white); line-height: 1; }.stat strong span {
+  font-size: 80px;
+}
+.stat span { font-size: 13px; color: rgba(255,255,255,.55); text-transform: uppercase; letter-spacing: .04em; font-weight: 600; }
+.stat-note { text-align:center; font-size:12px; color: rgba(255,255,255,.35); margin-top: 28px; font-family: var(--font); }
+
+.about-photo { border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); position: relative; }
+.value-row { display: flex; gap: 18px; padding: 24px 0; border-bottom: 1px solid var(--line); }
+.bg-dark .value-row { border-bottom-color: var(--line-dark); }
+.value-row:last-child { border-bottom: none; }
+.value-row .num { font-family: var(--font-display); font-weight: 600; color: var(--accent); font-size: 26px; width: 40px; flex: none; }
+
+.since-badge {
+  width: 108px; height: 108px; border-radius: 50%; background: var(--white); border: 1px solid var(--line);
+  display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; flex: none;
+  font-family: var(--font-display); text-transform: uppercase; font-size: 15px; font-weight: 600; color: var(--ink); line-height: 1.15;
+}
+.since-row { display: flex; align-items: center; gap: 20px; margin: 26px 0; }
+.since-row .rule { width: 1px; height: 60px; background: var(--line); }
+
+.team-card { text-align: center; }
+.team-photo {
+  width: 100%; aspect-ratio: 1; border-radius: var(--radius); background: var(--dark-2);
+  display: flex; align-items: center; justify-content: center; margin-bottom: 18px; position: relative; overflow: hidden;
+}
+.team-photo svg { width: 40%; opacity: .3; }
+.team-photo img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s ease; }
+.team-card:hover .team-photo img { transform: scale(1.1); }
+.team-photo .tp-overlay {
+  position: absolute; inset: 0; display: flex; align-items: flex-end; justify-content: center; padding-bottom: 18px;
+  background: linear-gradient(180deg, rgba(28,30,34,0) 45%, rgba(28,30,34,.92) 100%);
+  opacity: 0; transition: opacity .3s ease;
+}
+.team-card:hover .tp-overlay { opacity: 1; }
+.tp-overlay .tp-social { display: flex; gap: 8px; }
+.tp-overlay .tp-social a { width: 32px; height: 32px; border-radius: 50%; background: var(--accent); color: var(--dark); display: flex; align-items: center; justify-content: center; font-size: 12.5px; font-weight: 700; font-family: var(--font); }
+.tp-overlay .tp-social a:hover { background: var(--white); }
+.team-card h3 { margin-bottom: 2px; font-size: 19px; text-transform: uppercase; }
+.team-card span { color: var(--accent); font-weight: 600; font-size: 12.5px; text-transform: uppercase; letter-spacing: .04em; font-family: var(--font); }
+.team-card .placeholder-tag { display:inline-block; margin-top:10px; font-size: 11px; color: var(--grey-light); border: 1px dashed var(--line); padding: 4px 10px; border-radius: 100px; font-family: var(--font); }
+
+.testimonial-card {
+  background: var(--dark-2); border-radius: var(--radius); padding: 36px;
+  border: 1px solid rgba(255,255,255,.08); position: relative; height: 100%;
+}
+.testimonial-card .quote-mark { font-size: 50px; color: var(--accent); line-height: 1; font-family: Georgia, serif; margin-bottom: 6px; }
+.testimonial-card p { color: var(--on-dark-strong); font-size: 16.5px; }
+.testimonial-person { display: flex; align-items: center; gap: 12px; margin-top: 20px; }
+.testimonial-avatar {
+  width: 46px; height: 46px; border-radius: 50%; background: var(--accent);
+  color: var(--dark); display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-weight: 600; font-size: 19px; flex: none;
+}
+.testimonial-person strong { display: block; font-size: 14.5px; color: var(--white); font-family: var(--font); }
+.testimonial-person span { font-size: 12.5px; color: rgba(255,255,255,.45); font-family: var(--font); }
+
+.process-track { position: relative; }
+.process-step { text-align: center; position: relative; }
+.process-step .step-num {
+  width: 60px; height: 60px; border-radius: 50%; background: var(--dark-2); border: 1px solid rgba(255,255,255,.1);
+  color: var(--accent); font-family: var(--font-display); font-weight: 600; font-size: 22px; display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 18px;
+}
+
+.cta-band {
+  background: var(--accent); border-radius: var(--radius); padding: 64px 48px; color: var(--dark);
+  display: flex; align-items: center; justify-content: space-between; gap: 32px; flex-wrap: wrap; position: relative; overflow: hidden;
+}
+.cta-band h2 { color: var(--dark); margin-bottom: 8px; }
+.cta-band p { color: rgba(28,30,34,.72); margin: 0; font-family: var(--font); }
+.cta-band .container-inner { position:relative; z-index:2; display:flex; align-items:center; justify-content:space-between; gap:32px; flex-wrap:wrap; width:100%; }
+.cta-band .btn-primary { background: var(--dark); color: var(--white); }
+.cta-band .btn-primary:hover { background: #000; }
+.cta-band .btn-light { border: 1px solid rgba(28,30,34,.25); }
+.cta-band .dot-accent { color: var(--dark); }
+
+.badge-pill { display:inline-block; background: var(--white); border:1px solid var(--line); color: var(--ink); font-family: var(--font); font-size: 12.5px; font-weight:600; text-transform: uppercase; letter-spacing: .03em; padding: 8px 18px; border-radius:100px; margin: 4px 6px 4px 0; }
+.bg-dark .badge-pill { background: var(--dark-2); border-color: rgba(255,255,255,.1); color: var(--on-dark-strong); }
+
+/* ---------- Portfolio ---------- */
+.filter-bar { display: flex; gap: 26px; justify-content: center; flex-wrap: wrap; margin-bottom: 44px; }
+.filter-btn { padding: 8px 0; border: none; border-bottom: 2px solid transparent; background: transparent; font-family: var(--font); font-weight: 600; font-size: 13px; text-transform: uppercase; letter-spacing: .04em; cursor: pointer; transition: all .25s ease; color: var(--grey); }
+.bg-dark .filter-btn { color: rgba(255,255,255,.5); }
+.filter-btn.active, .filter-btn:hover { color: var(--accent); border-bottom-color: var(--accent); }
+
+.term-toggle { display:inline-flex; background: var(--white); border-radius:100px; padding:5px; border:1px solid var(--line); }
+.term-btn { padding: 10px 22px; border-radius:100px; border:none; background:transparent; font-family: var(--font); font-weight:600; font-size:13px; text-transform:uppercase; letter-spacing:.03em; cursor:pointer; color: var(--grey); transition: all .2s ease; }
+.term-btn.active { background: var(--accent); color: var(--dark); }
+.term-btn span { opacity: .8; }
+.filter-btn .fb-count { color: var(--accent); margin-left: 4px; }
+.portfolio-card { border-radius: var(--radius); overflow: hidden; position: relative; background: var(--dark-2); border: 1px solid rgba(255,255,255,.1); transition: transform .3s ease, box-shadow .3s ease; }
+.portfolio-card:hover { transform: translateY(-6px); box-shadow: var(--shadow); }
+.portfolio-thumb { aspect-ratio: 4/3; background: var(--dark-3) center/cover no-repeat; position: relative; overflow: hidden; }
+.portfolio-thumb .pf-overlay {
+  position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: flex-end;
+  padding: 22px; background: linear-gradient(180deg, rgba(28,30,34,0) 35%, rgba(28,30,34,.96) 100%);
+  opacity: 0; transform: translateY(14px); transition: opacity .35s ease, transform .35s ease;
+}
+.portfolio-card:hover .pf-overlay { opacity: 1; transform: translateY(0); }
+.portfolio-card h3 { font-size: 17px; margin-bottom: 6px; text-transform: none; color: var(--white); }
+.portfolio-card span.cat { color: var(--accent); font-size: 11.5px; font-weight: 700; text-transform: uppercase; font-family: var(--font); letter-spacing: .04em; }
+.portfolio-card p { color: rgba(255,255,255,.6); font-size: 13px; margin: 6px 0 0; }
+
+/* ---------- Pricing ---------- */
+.price-card { border-radius: var(--radius); border: 1px solid var(--line); padding: 38px 32px; background: var(--white); position: relative; height: 100%; display:flex; flex-direction:column; }
+.price-card.featured { border-color: var(--accent); box-shadow: var(--shadow); }
+.price-card .tag { position:absolute; top:-13px; right: 26px; background: var(--accent); color: var(--dark); font-family: var(--font); font-size:11px; font-weight:700; text-transform: uppercase; padding:6px 14px; border-radius:100px; letter-spacing:.03em;}
+.price-card .amount { font-family: var(--font-display); font-size: 44px; font-weight: 600; color: var(--ink); margin: 14px 0 4px; }
+.price-card .amount span { font-family: var(--font); font-size: 14px; color: var(--grey-light); font-weight: 600; text-transform: none; }
+.price-card ul { list-style:none; padding:0; margin: 22px 0; flex:1; }
+.price-card ul li { padding-left: 26px; position: relative; margin-bottom: 12px; font-size: 14.5px; color: var(--grey); font-family: var(--font); }
+.price-card ul li::before { content: "✓"; position:absolute; left:0; color: var(--accent); font-weight:800; }
+.placeholder-note { text-align:center; border: 1px dashed var(--line); background: var(--bg-soft); border-radius: var(--radius); padding: 14px 18px; font-size: 13px; color: var(--grey-light); margin-top: 8px; font-family: var(--font); }
+.bg-dark .placeholder-note { background: rgba(255,255,255,.05); border-color: rgba(255,255,255,.15); color: rgba(255,255,255,.45); }
+
+/* ---------- Contact ---------- */
+.contact-wrap { display:grid; grid-template-columns: 1fr 1.15fr; gap: 44px; align-items:flex-start; }
+@media (max-width: 900px) { .contact-wrap { grid-template-columns: 1fr; } }
+.contact-info-card { background: var(--dark); color: var(--white); border-radius: var(--radius); padding: 42px 34px; }
+.contact-info-card h3 { color: var(--white); }
+.contact-row { display:flex; gap:16px; padding: 18px 0; border-bottom: 1px solid var(--line-dark); align-items:flex-start; }
+.contact-row:last-child { border-bottom:none; }
+.contact-row .ic { width:42px; height:42px; border-radius:50%; background: var(--accent); display:flex; align-items:center; justify-content:center; flex:none; }
+.contact-row .ic svg { stroke: var(--dark) !important; }
+.contact-row strong { display:block; font-size:12px; text-transform:uppercase; letter-spacing:.06em; color: rgba(255,255,255,.45); margin-bottom:4px; font-family: var(--font); }
+.contact-row span, .contact-row a { font-size: 15px; font-weight: 600; color: var(--white); font-family: var(--font); }
+.social-row { display:flex; gap:10px; margin-top: 26px; }
+.social-row a { width:38px; height:38px; border-radius:50%; background: rgba(255,255,255,.08); display:flex; align-items:center; justify-content:center; font-size:13px; transition: background .2s ease; font-family: var(--font); font-weight: 600; }
+.social-row a:hover { background: var(--accent); color: var(--dark); }
+
+.form-card { background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); padding: 40px; box-shadow: var(--shadow-sm); }
+.form-row { display:grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+@media (max-width:560px){ .form-row { grid-template-columns: 1fr; } }
+.field { margin-bottom: 18px; }
+.field label { display:block; font-family: var(--font); font-size:12.5px; font-weight:700; text-transform: uppercase; letter-spacing: .03em; color: var(--ink); margin-bottom:8px; }
+.field input, .field textarea, .field select {
+  width:100%; padding: 13px 16px; border-radius: var(--radius-sm); border: 1px solid var(--line); font-family: var(--font); font-size:14.5px;
+  background: var(--bg-soft); transition: border-color .2s ease;
+}
+.field input:focus, .field textarea:focus, .field select:focus { outline:none; border-color: var(--accent); background: var(--white); }
+.form-note { font-family: var(--font); font-size: 12.5px; color: var(--grey-light); margin-top: 10px; text-align:center; }
+
+/* ---------- Footer ---------- */
+.site-footer { background: var(--dark); color: rgba(255,255,255,.55); padding: 72px 0 28px; border-top: 1px solid rgba(255,255,255,.06); }
+.footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1.2fr; gap: 40px; padding-bottom: 48px; border-bottom: 1px solid rgba(255,255,255,.1); }
+@media (max-width: 900px) { .footer-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 560px) { .footer-grid { grid-template-columns: 1fr; } }
+.footer-grid h4 { color: var(--white); font-family: var(--font); font-size: 13px; text-transform: uppercase; letter-spacing: .07em; margin-bottom: 22px; font-weight: 700; }
+.footer-grid .brand { color: var(--white); margin-bottom: 16px; }
+.footer-grid ul { list-style: none; padding: 0; margin: 0; }
+.footer-grid ul li { margin-bottom: 13px; }
+.footer-grid ul a { font-family: var(--font); font-size: 14px; color: rgba(255,255,255,.55); }
+.footer-grid ul a:hover { color: var(--accent); }
+.footer-bottom { display:flex; justify-content:space-between; align-items:center; padding-top:26px; font-family: var(--font); font-size:13px; flex-wrap:wrap; gap:12px; }
+.footer-bottom a { color: rgba(255,255,255,.5); }
+.footer-bottom a:hover { color: var(--accent); }
+
+/* ---------- Floating WhatsApp ---------- */
+.float-wa {
+  position: fixed; right: 26px; bottom: 26px; width: 58px; height: 58px; border-radius: 50%; background: #25D366;
+  display:flex; align-items:center; justify-content:center; box-shadow: 0 14px 30px -8px rgba(37,211,102,.6); z-index: 900;
+  animation: floaty 2.6s ease-in-out infinite;
+}
+@keyframes floaty { 0%,100%{ transform: translateY(0);} 50%{ transform: translateY(-6px);} }
+
+/* ---------- Utilities / reveal ---------- */
+[data-aos] { opacity: 0; transition-property: opacity, transform; transition-duration: .7s; transition-timing-function: cubic-bezier(.22,.9,.34,1); }
+[data-aos].aos-animate { opacity: 1; transform: none !important; }
+[data-aos="fade-up"] { transform: translateY(28px); }
+[data-aos="fade-down"] { transform: translateY(-28px); }
+[data-aos="fade-right"] { transform: translateX(-28px); }
+[data-aos="fade-left"] { transform: translateX(28px); }
+[data-aos="zoom-in"] { transform: scale(.94); }
+
+.blog-card { border: 1px solid var(--line); border-radius: var(--radius); overflow:hidden; transition: all .3s ease; height:100%; background: var(--white); }
+.bg-dark .blog-card { background: var(--dark-2); border-color: rgba(255,255,255,.08); }
+.blog-card:hover { transform: translateY(-6px); box-shadow: var(--shadow); border-color: var(--accent); }
+.blog-thumb { aspect-ratio: 16/10; background: var(--dark-2); }
+.blog-card .bc-body { padding: 26px; }
+.blog-meta { font-family: var(--font); font-size:11.5px; color: var(--accent); font-weight:700; text-transform:uppercase; letter-spacing:.06em; margin-bottom:10px; }
+.blog-card h3 { font-size: 18px; margin-bottom: 10px; text-transform: none; }
+
+/* ---------- Blog carousel — center-mode, autoplay ---------- */
+.blog-carousel { overflow: hidden; padding: 24px 0 14px; margin: 0 -24px; }
+.blog-carousel .blog-track { padding: 0 24px; }
+.blog-track { display: flex; gap: 24px; transition: transform .6s cubic-bezier(.22,.9,.34,1); will-change: transform; }
+.blog-track .blog-card {
+  flex: 0 0 300px; margin: 0; opacity: .55; transform: scale(.86); transition: transform .5s ease, opacity .5s ease, box-shadow .5s ease, border-color .5s ease;
+}
+.blog-track .blog-card:hover { transform: scale(.86); }
+.blog-track .blog-card.is-center { opacity: 1; transform: scale(1.08); box-shadow: var(--shadow); border-color: var(--accent); position: relative; z-index: 2; }
+.blog-thumb { position: relative; }
+.blog-meta-bar {
+  position: absolute; left: 14px; right: 14px; bottom: -18px; background: var(--dark); border-radius: var(--radius-sm);
+  padding: 10px 16px; display: flex; gap: 16px; font-family: var(--font); font-size: 12px; font-weight: 600; color: rgba(255,255,255,.85);
+  box-shadow: var(--shadow-sm);
+}
+.blog-meta-bar span { display: flex; align-items: center; gap: 6px; white-space: nowrap; }
+.blog-meta-bar svg { width: 14px; height: 14px; stroke: var(--accent); flex: none; }
+.blog-track .blog-card .bc-body { padding: 32px 22px 22px; display: flex; align-items: flex-end; justify-content: space-between; gap: 14px; }
+.blog-track .blog-card h3 { font-size: 16px; margin: 0; text-transform: none; flex: 1; line-height: 1.35; }
+.blog-arrow {
+  flex: none; width: 40px; height: 40px; border-radius: 50%; border: 1px solid rgba(255,255,255,.2);
+  display: flex; align-items: center; justify-content: center; color: var(--white); transition: all .25s ease;
+}
+.blog-arrow:hover, .blog-track .blog-card.is-center .blog-arrow { background: var(--accent); border-color: var(--accent); color: var(--dark); }
+@media (max-width: 640px) { .blog-track .blog-card { flex-basis: 240px; } }
+.blog-nav { display: flex; justify-content: center; gap: 12px; margin-top: 20px; }
+.blog-arrow-nav {
+  width: 46px; height: 46px; border-radius: 50%; border: 1px solid rgba(255,255,255,.25); background: transparent;
+  color: #fff; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: all .25s ease;
+}
+.blog-arrow-nav:hover { background: var(--accent); border-color: var(--accent); color: var(--dark); }
+
+/* ==========================================================================
+   Homepage-exclusive sections — mirrors reference site's 13-section layout
+   ========================================================================== */
+
+/* ---------- Hero carousel (Owl-Carousel-style crossfade) ---------- */
+.hero { padding-top: 0; }
+.hero-slides { position: absolute; inset: 0; z-index: 1; }
+.hero-slide {
+  position: absolute; inset: 0; opacity: 0; visibility: hidden;
+  transition: opacity 1s ease; overflow: hidden;
+}
+.hero-slide.active { opacity: 1; visibility: visible; z-index: 2; }
+.hero-slide .hs-bg {
+  position: absolute; inset: 0; background-position: center; background-size: cover;
+  transform: scale(1); transition: transform 6s ease-out;
+}
+.hero-slide.active .hs-bg { transform: scale(1.14); }
+.hero-slide::after {
+  content: ""; position: absolute; inset: 0;
+  background: linear-gradient(100deg, rgba(28,30,34,.97) 0%, rgba(28,30,34,.92) 42%, rgba(28,30,34,.65) 100%);
+}
+.hero .container { padding-top: 160px; padding-bottom: 120px; min-height: 92vh; display: flex; flex-direction: column; justify-content: center; }
+.hero-slide-body { display: none; }
+.hero-slide-body.active { display: block; }
+.hero-nav { position: absolute; right: 40px; bottom: 46px; z-index: 4; display: flex; gap: 12px; }
+.hero-arrow {
+  width: 50px; height: 50px; border-radius: 50%; border: 1px solid rgba(255,255,255,.25); background: transparent;
+  color: #fff; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: all .25s ease;
+}
+.hero-arrow:hover { background: var(--accent); border-color: var(--accent); color: var(--dark); }
+.hero-dots { position: absolute; left: 90px; bottom: 54px; z-index: 4; display: flex; gap: 10px; }
+@media (max-width: 768px) { .hero-dots { left: 24px; } .hero-nav { right: 24px; } }
+.hero-dot { width: 9px; height: 9px; border-radius: 50%; background: rgba(255,255,255,.3); border: none; cursor: pointer; padding: 0; transition: all .25s ease; }
+.hero-dot.active { background: var(--accent); width: 26px; border-radius: 6px; }
+
+/* ---------- Services spotlight grid ---------- */
+.spotlight-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); }
+.bg-dark .spotlight-grid, .spotlight-grid.on-dark { background: rgba(255,255,255,.08); border-color: rgba(255,255,255,.08); }
+@media (max-width: 860px) { .spotlight-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 560px) { .spotlight-grid { grid-template-columns: 1fr; } }
+.spotlight-item {
+  background: var(--white); padding: 44px 32px; transition: all .35s ease; position: relative;
+}
+.bg-dark .spotlight-item, .spotlight-item.on-dark { background: var(--dark-2); }
+.spotlight-item .sp-num { font-family: var(--font-display); font-size: 15px; color: var(--grey-light); letter-spacing: .05em; margin-bottom: 20px; }
+.spotlight-item .service-icon { width: auto; height: auto; background: none; border-radius: 0; margin-bottom: 22px; }
+.spotlight-item .service-icon svg { width: 34px; height: 34px; stroke: var(--accent) !important; transition: stroke .3s ease; }
+.spotlight-item h3 { text-transform: none; margin-bottom: 10px; }
+.spotlight-item p { font-size: 14px; margin: 0; transition: color .3s ease; }
+.spotlight-grid.dimming .spotlight-item { opacity: .45; }
+.spotlight-grid.dimming .spotlight-item.is-active { opacity: 1; background: var(--accent); transform: translateY(-4px); box-shadow: var(--shadow); z-index: 2; }
+.spotlight-grid.dimming .spotlight-item.is-active .sp-num { color: rgba(28,30,34,.55); }
+.spotlight-grid.dimming .spotlight-item.is-active h3 { color: var(--dark); }
+.spotlight-grid.dimming .spotlight-item.is-active p { color: rgba(28,30,34,.78); }
+.spotlight-grid.dimming .spotlight-item.is-active .service-icon svg { stroke: var(--dark) !important; }
+
+/* ---------- About photo collage ---------- */
+.photo-collage { position: relative; padding: 30px 34px 34px 0; }
+.photo-collage .pc-back, .photo-collage .pc-front {
+  aspect-ratio: 4/3; border-radius: var(--radius); background: var(--dark-2); box-shadow: var(--shadow);
+  display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,.3);
+  font-family: var(--font); font-weight: 700; font-size: 13px; text-align: center; padding: 16px;
+}
+.photo-collage .pc-back { width: 78%; margin-left: auto; overflow: hidden; }
+.photo-collage .pc-front { width: 62%; position: absolute; left: 0; bottom: 0; border: 6px solid var(--white); overflow: hidden; }
+.photo-collage .pc-bar { position: absolute; left: 0; top: 0; bottom: 60px; width: 10px; background: var(--accent); border-radius: 6px; }
+.photo-collage img { width: 100%; height: 100%; object-fit: cover; }
+@media (max-width: 640px) { .photo-collage { padding: 24px 20px 24px 0; } }
+
+/* ---------- Live / brand-statement circle ---------- */
+.live-section {
+  position: relative; background-size: cover; background-position: center;
+}
+.live-section::before {
+  content: ""; position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(28,30,34,.88), rgba(28,30,34,.94));
+}
+.live-section .container { position: relative; z-index: 2; }
+.live-wrap { display: flex; align-items: center; justify-content: center; padding: 40px 0; }
+.live-circle {
+  width: min(440px, 86vw); aspect-ratio: 1; border-radius: 50%; background: radial-gradient(circle at 35% 30%, var(--accent), var(--accent-dim));
+  display: flex; align-items: center; justify-content: center; position: relative; text-align: center;
+}
+.live-circle .lc-inner { max-width: 280px; }
+.live-circle .lc-inner p {
+  color: var(--dark); font-family: var(--font-display); font-weight: 700; font-size: 26px;
+  text-transform: uppercase; line-height: 1.15; margin: 0;
+}
+.live-play {
+  position: absolute; width: 92px; height: 92px; border-radius: 50%; background: var(--dark); color: var(--white);
+  display: flex; align-items: center; justify-content: center; box-shadow: 0 20px 40px -12px rgba(0,0,0,.5);
+  left: 50%; top: 8%; transform: translateX(-50%); cursor: pointer; border: none;
+}
+.live-play svg { stroke: var(--white) !important; margin-left: 4px; }
+.live-play::before {
+  content: ""; position: absolute; inset: -14px; border-radius: 50%; border: 1px dashed rgba(255,255,255,.4); animation: spin 18s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* ---------- Video popup modal ---------- */
+.video-modal { position: fixed; inset: 0; z-index: 10000; display: none; align-items: center; justify-content: center; padding: 24px; }
+.video-modal.open { display: flex; }
+.video-modal-backdrop { position: absolute; inset: 0; background: rgba(10,10,12,.88); }
+.video-modal-box { position: relative; width: min(880px, 100%); aspect-ratio: 16/9; background: #000; border-radius: var(--radius); overflow: hidden; z-index: 2; box-shadow: var(--shadow); }
+.video-modal-box video { width: 100%; height: 100%; display: block; }
+.video-modal-close {
+  position: absolute; top: -46px; right: 0; width: 36px; height: 36px; border-radius: 50%;
+  background: var(--accent); color: var(--dark); border: none; font-size: 20px; line-height: 1; cursor: pointer; z-index: 3;
+}
+
+/* ---------- We-do: progress bars + FAQ accordion ---------- */
+.progress-row { margin-bottom: 22px; }
+.progress-row .pr-label { display: flex; justify-content: space-between; font-family: var(--font); font-weight: 600; font-size: 13px; text-transform: uppercase; letter-spacing: .03em; margin-bottom: 10px; }
+.progress-row .pr-label span:last-child { color: var(--accent); }
+.progress-track { height: 8px; border-radius: 100px; background: rgba(255,255,255,.1); overflow: hidden; }
+.bg-soft .progress-track { background: var(--line); }
+.progress-fill { height: 100%; border-radius: 100px; background: var(--accent); width: 0; transition: width 1.4s cubic-bezier(.22,.9,.34,1); }
+
+.faq-item { border: 1px solid rgba(255,255,255,.08); border-radius: var(--radius-sm); background: var(--dark-2); margin-bottom: 12px; overflow: hidden; transition: border-color .25s ease, background .25s ease; }
+.bg-soft .faq-item { background: var(--white); border-color: var(--line); }
+.faq-q { display: flex; align-items: center; gap: 18px; padding: 20px 22px; cursor: pointer; background: none; border: none; width: 100%; text-align: left; }
+.faq-q .fq-num { font-family: var(--font-display); font-size: 17px; color: var(--accent); flex: none; width: 26px; }
+.faq-q .fq-title { flex: 1; font-family: var(--font-display); font-size: 19px; text-transform: uppercase; color: var(--on-dark-strong); }
+.bg-soft .faq-q .fq-title { color: var(--ink); }
+.faq-q .fq-icon { flex: none; width: 26px; height: 26px; border-radius: 50%; background: var(--accent); color: var(--dark); display: flex; align-items: center; justify-content: center; font-size: 16px; font-weight: 700; transition: transform .25s ease; }
+.faq-item.open { border-color: var(--accent); background: var(--dark-3); }
+.bg-soft .faq-item.open { background: var(--bg-soft-2); }
+.faq-item.open .fq-icon { transform: rotate(45deg); }
+.faq-a { max-height: 0; overflow: hidden; transition: max-height .35s ease; }
+.faq-item.open .faq-a { max-height: 220px; }
+.faq-a p { padding: 0 22px 22px 22px; margin: 0; font-size: 14.5px; }
+
+/* ---------- Parallax stats band ---------- */
+.parallax-stats {
+  position: relative; overflow: hidden; padding: 120px 0;
+  background: linear-gradient(rgba(20,21,25,.6), rgba(20,21,25,.75)), url('https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+}
+.parallax-stats .grid { position: relative; z-index: 2; }
+.stat { position: relative; }
+.stat:not(:last-child)::after {
+  content: ""; position: absolute; top: 50%; right: -14px; transform: translateY(-50%);
+  width: 1px; height: 64px; background: rgba(255,255,255,.2);
+}
+@media (max-width: 640px) { .stat:not(:last-child)::after { display: none; } }
+
+/* ---------- Trusted quote/checklist band ---------- */
+.quote-bubble { background: var(--accent); border-radius: var(--radius) var(--radius) var(--radius) 4px; padding: 40px 34px; color: var(--dark); position: relative; }
+.quote-bubble p { color: rgba(28,30,34,.8); font-family: var(--font-display); font-size: 21px; line-height: 1.3; text-transform: uppercase; margin: 0; }
+.quote-bubble--overlap { margin-top: auto; z-index: 3; box-shadow: var(--shadow); }
+@media (max-width: 860px) { .quote-bubble--overlap { margin-top: -60px; } }
+.value-row .vr-title { font-family: var(--font-display); font-weight: 600; font-size: 18px; text-transform: uppercase; color: var(--on-dark-strong); margin-bottom: 2px; }
+.value-row .vr-sub { font-family: var(--font); font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: var(--accent); }
+.check-list { list-style: none; padding: 0; margin: 22px 0; }
+.check-list li { display: flex; align-items: center; gap: 12px; padding: 10px 0; font-family: var(--font); font-weight: 500; }
+.check-list li svg { flex: none; width: 20px; height: 20px; padding: 3px; border-radius: 50%; background: var(--accent); stroke: var(--dark) !important; }
+.trust-photo { border-radius: var(--radius); overflow: hidden; aspect-ratio: 4/3; background: var(--dark-2); position: relative; }
+.trust-photo img { width: 100%; height: 100%; object-fit: cover; }
+
+/* ---------- Quote / statement parallax band ---------- */
+.statement-band { background: var(--dark-3); text-align: center; position: relative; overflow: hidden; }
+.statement-band::before { content: ""; position: absolute; inset: 0; background-image: radial-gradient(rgba(255,255,255,.05) 1px, transparent 1px); background-size: 22px 22px; }
+.statement-band .container { position: relative; z-index: 2; }
+.statement-band .st-icon { width: 68px; height: 68px; border-radius: 50%; background: var(--accent); display: flex; align-items: center; justify-content: center; margin: 0 auto 28px; }
+.statement-band .st-icon svg { stroke: var(--dark) !important; }
+.statement-band p.statement { font-family: var(--font-display); font-size: clamp(24px, 3.6vw, 40px); text-transform: uppercase; color: var(--on-dark-strong); max-width: 880px; margin: 0 auto; line-height: 1.25; }
+.statement-band p.statement .accent { color: var(--accent); }
+
+/* ---------- Page Loader (Uiverse.io by andrew-manzyk, recolored to theme) ---------- */
+.page-loader {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--dark);
+  transition: opacity .5s ease, visibility .5s ease;
+}
+.page-loader.is-hidden { opacity: 0; visibility: hidden; pointer-events: none; }
+
+.loader {
+  --main-color: var(--accent);
+  transform: scale(1);
+  z-index: 999;
+}
+.loader svg { width: 100px; height: 100px; }
+.loader svg path:first-child {
+  will-change: d;
+  fill: var(--main-color);
+  animation: morph 2s ease-in-out infinite;
+}
+.loader svg path:not(:first-child) {
+  fill: none;
+  stroke: var(--main-color);
+  stroke-width: 0;
+}
+.loader svg path:nth-child(2) { animation: wave 2s linear infinite; animation-delay: 1.7s; }
+.loader svg path:nth-child(3) { animation: wave 2s linear infinite; animation-delay: .3s; }
+.loader svg path:nth-child(4) { animation: wave 2s linear infinite; animation-delay: 1s; }
+@keyframes wave {
+  0% { stroke-width: 0; transform: scale(1) translateX(0px) translateY(0px); opacity: 0; }
+  10% { stroke-width: 5; transform: scale(1.05) translateX(-2.25px) translateY(-2.25px); opacity: 0.3; }
+  30% { stroke-width: 10; transform: scale(1.1) translateX(-4.5px) translateY(-4.5px); opacity: 0; }
+  100% { stroke-width: 0; transform: scale(1) translateX(0px) translateY(0px); opacity: 0; }
+}
+@keyframes morph {
+  0% {
+    d: path("M10,20 C10,17.24 11.12,14.74 12.93,12.93 L12.93,12.93 C14.74,11.12 17.24,10 20,10 L80,10 C82.76,10 85.26,11.12 87.07,12.93 L87.07,12.93 C88.88,14.74 90,17.24 90,20 L90,80 C90,82.76 88.88,85.26 87.07,87.07 L87.07,87.07 C85.26,88.88 82.76,90 80,90 L20,90 C17.24,90 14.74,88.88 12.93,87.07 L12.93,87.07 C11.12,85.26 10,82.76 10,80Z M68,50 C68,45.02 65.98,40.52 62.72,37.27 L62.72,37.27 C59.47,34.01 54.97,32 50,32 L50,32 C45.02,32 40.52,34.01 37.27,37.27 L37.27,37.27 C34.01,40.52 32,45.02 32,50 L32,50 C32,54.97 34.01,59.47 37.27,62.72 L37.27,62.72 C40.52,65.98 45.02,68 50,68 L50,68 C54.97,68 59.47,65.98 62.72,62.72 L62.72,62.72 C65.98,59.47 68,54.97 68,50Z");
+  }
+  10% {
+    d: path("M10,20 C10,17.24 11.12,14.74 12.93,12.93 L12.93,12.93 C14.74,11.12 17.24,10 20,10 L80,10 C82.76,10 85.26,11.12 87.07,12.93 L87.07,12.93 C88.88,14.74 90,17.24 90,20 L90,80 C90,82.76 88.88,85.26 87.07,87.07 L87.07,87.07 C85.26,88.88 82.76,90 80,90 L20,90 C17.24,90 14.74,88.88 12.93,87.07 L12.93,87.07 C11.12,85.26 10,82.76 10,80Z M68,50 C68,45.02 65.98,40.52 62.72,37.27 L62.72,37.27 C59.47,34.01 54.97,32 50,32 L50,32 C45.02,32 40.52,34.01 37.27,37.27 L37.27,37.27 C34.01,40.52 32,45.02 32,50 L32,50 C32,54.97 34.01,59.47 37.27,62.72 L37.27,62.72 C40.52,65.98 45.02,68 50,68 L50,68 C54.97,68 59.47,65.98 62.72,62.72 L62.72,62.72 C65.98,59.47 68,54.97 68,50Z");
+  }
+  33% {
+    d: path("M10,37.57 C10,34.92 11.05,32.37 12.92,30.5 L30.5,12.92 C32.37,11.05 34.92,10 37.57,10 L62.42,10 C65.07,10 67.62,11.05 69.49,12.92 L87.07,30.5 C88.94,32.37 90,34.92 90,37.57 L90,62.42 C90,65.07 88.94,67.62 87.07,69.49 L69.49,87.07 C67.62,88.94 65.07,90 62.42,90 L37.57,90 C34.92,90 32.37,88.94 30.5,87.07 L12.92,69.49 C11.05,67.62 10,65.07 10,62.42Z M68,50 C68,49.12 67.66,48.24 66.99,47.57 L52.42,33 C51.75,32.33 50.87,32 50,32 L50,32 C49.12,32 48.24,32.33 47.57,33 L33,47.57 C32.33,48.24 32,49.12 32,50 L32,50 C32,50.87 32.33,51.75 33,52.42 L47.57,66.99 C48.24,67.66 49.12,68 50,68 L50,68 C50.87,68 51.75,67.66 52.42,66.99 L66.99,52.42 C67.66,51.75 68,50.87 68,50Z");
+  }
+  43% {
+    d: path("M10,37.57 C10,34.92 11.05,32.37 12.92,30.5 L30.5,12.92 C32.37,11.05 34.92,10 37.57,10 L62.42,10 C65.07,10 67.62,11.05 69.49,12.92 L87.07,30.5 C88.94,32.37 90,34.92 90,37.57 L90,62.42 C90,65.07 88.94,67.62 87.07,69.49 L69.49,87.07 C67.62,88.94 65.07,90 62.42,90 L37.57,90 C34.92,90 32.37,88.94 30.5,87.07 L12.92,69.49 C11.05,67.62 10,65.07 10,62.42Z M68,50 C68,49.12 67.66,48.24 66.99,47.57 L52.42,33 C51.75,32.33 50.87,32 50,32 L50,32 C49.12,32 48.24,32.33 47.57,33 L33,47.57 C32.33,48.24 32,49.12 32,50 L32,50 C32,50.87 32.33,51.75 33,52.42 L47.57,66.99 C48.24,67.66 49.12,68 50,68 L50,68 C50.87,68 51.75,67.66 52.42,66.99 L66.99,52.42 C67.66,51.75 68,50.87 68,50Z");
+  }
+  66% {
+    d: path("M10,50 C10,38.95 14.48,28.95 21.72,21.72 L21.72,21.72 C28.95,14.48 38.95,10 50,10 L50,10 C61.05,10 71.05,14.48 78.28,21.72 L78.28,21.72 C85.52,28.95 90,38.95 90,50 L90,50 C90,61.05 85.52,71.05 78.28,78.28 L78.28,78.28 C71.05,85.52 61.05,90 50,90 L50,90 C38.95,90 28.95,85.52 21.72,78.28 L21.72,78.28 C14.48,71.05 10,61.05 10,50Z M63.72,39.7 C63.72,38.75 63.34,37.9 62.71,37.28 L62.71,37.28 C62.09,36.65 61.24,36.27 60.29,36.27 L39.7,36.27 C38.75,36.27 37.9,36.65 37.28,37.28 L37.28,37.28 C36.65,37.9 36.27,38.75 36.27,39.7 L36.27,60.29 C36.27,61.24 36.65,62.09 37.28,62.71 L37.28,62.71 C37.9,63.34 38.75,63.72 39.7,63.72 L60.29,63.72 C61.24,63.72 62.09,63.34 62.71,62.71 L62.71,62.71 C63.34,62.09 63.72,61.24 63.72,60.29Z");
+  }
+  76% {
+    d: path("M10,50 C10,38.95 14.48,28.95 21.72,21.72 L21.72,21.72 C28.95,14.48 38.95,10 50,10 L50,10 C61.05,10 71.05,14.48 78.28,21.72 L78.28,21.72 C85.52,28.95 90,38.95 90,50 L90,50 C90,61.05 85.52,71.05 78.28,78.28 L78.28,78.28 C71.05,85.52 61.05,90 50,90 L50,90 C38.95,90 28.95,85.52 21.72,78.28 L21.72,78.28 C14.48,71.05 10,61.05 10,50Z M63.72,39.7 C63.72,38.75 63.34,37.9 62.71,37.28 L62.71,37.28 C62.09,36.65 61.24,36.27 60.29,36.27 L39.7,36.27 C38.75,36.27 37.9,36.65 37.28,37.28 L37.28,37.28 C36.65,37.9 36.27,38.75 36.27,39.7 L36.27,60.29 C36.27,61.24 36.65,62.09 37.28,62.71 L37.28,62.71 C37.9,63.34 38.75,63.72 39.7,63.72 L60.29,63.72 C61.24,63.72 62.09,63.34 62.71,62.71 L62.71,62.71 C63.34,62.09 63.72,61.24 63.72,60.29Z");
+  }
+  100% {
+    d: path("M10,20 C10,17.24 11.12,14.74 12.93,12.93 L12.93,12.93 C14.74,11.12 17.24,10 20,10 L80,10 C82.76,10 85.26,11.12 87.07,12.93 L87.07,12.93 C88.88,14.74 90,17.24 90,20 L90,80 C90,82.76 88.88,85.26 87.07,87.07 L87.07,87.07 C85.26,88.88 82.76,90 80,90 L20,90 C17.24,90 14.74,88.88 12.93,87.07 L12.93,87.07 C11.12,85.26 10,82.76 10,80Z M68,50 C68,45.02 65.98,40.52 62.72,37.27 L62.72,37.27 C59.47,34.01 54.97,32 50,32 L50,32 C45.02,32 40.52,34.01 37.27,37.27 L37.27,37.27 C34.01,40.52 32,45.02 32,50 L32,50 C32,54.97 34.01,59.47 37.27,62.72 L37.27,62.72 C40.52,65.98 45.02,68 50,68 L50,68 C54.97,68 59.47,65.98 62.72,62.72 L62.72,62.72 C65.98,59.47 68,54.97 68,50Z");
+  }
+}
+
+</style>
+</head>
+<body class="">
+
+  <!-- Page Loader -->
+  <div class="page-loader" id="pageLoader">
+    <div class="loader">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+        <path d="M10,20 C10,17.24 11.12,14.74 12.93,12.93 L12.93,12.93 C14.74,11.12 17.24,10 20,10 L80,10 C82.76,10 85.26,11.12 87.07,12.93 L87.07,12.93 C88.88,14.74 90,17.24 90,20 L90,80 C90,82.76 88.88,85.26 87.07,87.07 L87.07,87.07 C85.26,88.88 82.76,90 80,90 L20,90 C17.24,90 14.74,88.88 12.93,87.07 L12.93,87.07 C11.12,85.26 10,82.76 10,80Z M68,50 C68,45.02 65.98,40.52 62.72,37.27 L62.72,37.27 C59.47,34.01 54.97,32 50,32 L50,32 C45.02,32 40.52,34.01 37.27,37.27 L37.27,37.27 C34.01,40.52 32,45.02 32,50 L32,50 C32,54.97 34.01,59.47 37.27,62.72 L37.27,62.72 C40.52,65.98 45.02,68 50,68 L50,68 C54.97,68 59.47,65.98 62.72,62.72 L62.72,62.72 C65.98,59.47 68,54.97 68,50Z"></path>
+        <path d="M10,20 C10,17.24 11.12,14.74 12.93,12.93 L12.93,12.93 C14.74,11.12 17.24,10 20,10 L80,10 C82.76,10 85.26,11.12 87.07,12.93 L87.07,12.93 C88.88,14.74 90,17.24 90,20 L90,80 C90,82.76 88.88,85.26 87.07,87.07 L87.07,87.07 C85.26,88.88 82.76,90 80,90 L20,90 C17.24,90 14.74,88.88 12.93,87.07 L12.93,87.07 C11.12,85.26 10,82.76 10,80Z"></path>
+        <path d="M10,37.57 C10,34.92 11.05,32.37 12.92,30.5 L30.5,12.92 C32.37,11.05 34.92,10 37.57,10 L62.42,10 C65.07,10 67.62,11.05 69.49,12.92 L87.07,30.5 C88.94,32.37 90,34.92 90,37.57 L90,62.42 C90,65.07 88.94,67.62 87.07,69.49 L69.49,87.07 C67.62,88.94 65.07,90 62.42,90 L37.57,90 C34.92,90 32.37,88.94 30.5,87.07 L12.92,69.49 C11.05,67.62 10,65.07 10,62.42Z"></path>
+        <path d="M10,50 C10,38.95 14.48,28.95 21.72,21.72 L21.72,21.72 C28.95,14.48 38.95,10 50,10 L50,10 C61.05,10 71.05,14.48 78.28,21.72 L78.28,21.72 C85.52,28.95 90,38.95 90,50 L90,50 C90,61.05 85.52,71.05 78.28,78.28 L78.28,78.28 C71.05,85.52 61.05,90 50,90 L50,90 C38.95,90 28.95,85.52 21.72,78.28 L21.72,78.28 C14.48,71.05 10,61.05 10,50Z"></path>
+      </svg>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <div class="container">
+      <a href="index.html" class="brand"><span class="badge">SM</span>Scale My Marketing</a>
+      <nav class="nav">
+        <ul style="list-style:none;display:flex;gap:30px;padding:0;margin:0;flex-direction:inherit;align-items:center;"><li><a href="index.html" class="active">Home</a></li>
+<li><a href="services.html" class="">Services</a></li>
+<li><a href="about.html" class="">About</a></li>
+<li><a href="portfolio.html" class="">Portfolio</a></li>
+<li><a href="pricing.html" class="">Pricing</a></li>
+<li><a href="testimonial.html" class="">Testimonials</a></li>
+<li><a href="blog.html" class="">Blog</a></li>
+<li><a href="contact.html" class="">Contact</a></li></ul>
+      </nav>
+      <div class="nav-cta">
+        <a href="tel:+918447836257" class="call-chip">
+          <span class="call-ic"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#1c1e22" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.7a2 2 0 0 1-.4 2.1L8.1 9.7a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.4c.9.3 1.8.5 2.7.6a2 2 0 0 1 1.9 2.2z"/></svg></span>
+          <span><em>Call Anytime</em><strong>+91 84478 36257</strong></span>
+        </a>
+        <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+  <div class="nav-scrim"></div>
+
+  <section class="hero">
+    <div class="hero-slides">
+      <div class="hero-slide active"><div class="hs-bg" style="background-image:url('https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1600&q=80');"></div></div>
+      <div class="hero-slide"><div class="hs-bg" style="background-image:url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1600&q=80');"></div></div>
+      <div class="hero-slide"><div class="hs-bg" style="background-image:url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=1600&q=80');"></div></div>
+      <div class="hero-slide"><div class="hs-bg" style="background-image:url('https://images.unsplash.com/photo-1579621970795-87facc2f976d?auto=format&fit=crop&w=1600&q=80');"></div></div>
+    </div>
+    <div class="hero-side">
+      <a href="https://www.instagram.com/scalemymarketing" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.facebook.com/profile.php?id=61551716025953" target="_blank" rel="noopener">Facebook</a>
+      <a href="https://www.linkedin.com/company/scale-my-marketingg" target="_blank" rel="noopener">LinkedIn</a>
+      <div class="rule"></div>
+      <a href="mailto:consult@scalemymarketing.net">Mon&ndash;Fri &middot; Response in 48h</a>
+    </div>
+    <div class="container">
+      <div class="hero-slide-body active" data-slide="0">
+        <div class="hero-badge" data-aos="fade-down"><span class="pulse"></span> Welcome to Scale My Marketing</div>
+        <h1 data-aos="fade-up">Performance Marketing <br>Agency In Delhi</h1>
+        <p class="lead" data-aos="fade-up" data-aos-delay="100">We turn marketing spend into predictable, repeatable growth &mdash; not a gamble. Built for fitness coaches, wellness practitioners, financial advisors and D2C brands.</p>
+        <div class="hero-actions" data-aos="fade-up" data-aos-delay="200">
+          <a href="contact.html" class="btn btn-primary">Book Free Strategy Call</a>
+          <a href="services.html" class="btn btn-outline" style="border-color:rgba(255,255,255,.35);color:#fff;">Explore Services</a>
+        </div>
+      </div>
+      <div class="hero-slide-body" data-slide="1">
+        <div class="hero-badge" data-aos="fade-down"><span class="pulse"></span> Welcome to Scale My Marketing</div>
+        <h1 data-aos="fade-up">SEO &amp; Growth <br>Partner You Trust</h1>
+        <p class="lead" data-aos="fade-up" data-aos-delay="100">Transparency over vanity metrics, ownership over excuses, craft over shortcuts &mdash; the three commitments behind every engagement we run.</p>
+        <div class="hero-actions" data-aos="fade-up" data-aos-delay="200">
+          <a href="about.html" class="btn btn-primary">About Us</a>
+          <a href="portfolio.html" class="btn btn-outline" style="border-color:rgba(255,255,255,.35);color:#fff;">See Our Work</a>
+        </div>
+      </div>
+      <div class="hero-slide-body" data-slide="2">
+        <div class="hero-badge" data-aos="fade-down"><span class="pulse"></span> Welcome to Scale My Marketing</div>
+        <h1 data-aos="fade-up">Growth Systems For <br>Fitness &amp; Wellness Brands</h1>
+        <p class="lead" data-aos="fade-up" data-aos-delay="100">From lead gen to retention &mdash; we build funnels for coaches, studios and wellness practitioners that turn followers into paying clients.</p>
+        <div class="hero-actions" data-aos="fade-up" data-aos-delay="200">
+          <a href="contact.html" class="btn btn-primary">Book Free Strategy Call</a>
+          <a href="portfolio.html" class="btn btn-outline" style="border-color:rgba(255,255,255,.35);color:#fff;">View Portfolio</a>
+        </div>
+      </div>
+      <div class="hero-slide-body" data-slide="3">
+        <div class="hero-badge" data-aos="fade-down"><span class="pulse"></span> Welcome to Scale My Marketing</div>
+        <h1 data-aos="fade-up">Ad Spend That <br>Actually Compounds</h1>
+        <p class="lead" data-aos="fade-up" data-aos-delay="100">For financial advisors and D2C brands &mdash; full-funnel paid media and automation that turns every rupee spent into measurable pipeline.</p>
+        <div class="hero-actions" data-aos="fade-up" data-aos-delay="200">
+          <a href="contact.html" class="btn btn-primary">Book Free Strategy Call</a>
+          <a href="pricing.html" class="btn btn-outline" style="border-color:rgba(255,255,255,.35);color:#fff;">Our Pricing</a>
+        </div>
+      </div>
+    </div>
+    <div class="hero-nav">
+      <button class="hero-arrow hero-prev" aria-label="Previous slide"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="15 5 8 12 15 19"/></svg></button>
+      <button class="hero-arrow hero-next" aria-label="Next slide"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></button>
+    </div>
+    <div class="hero-dots"></div>
+  </section>
+
+  <section class="bg-dark">
+    <div class="container">
+      <div class="section-head" data-aos="fade-up">
+        <div class="eyebrow">What We Do</div>
+        <h2>We shape the perfect growth solutions <span class="dot-accent">.</span></h2>
+        <p>Six connected service lines &mdash; strategy, creative, automation, tech, SEO and social &mdash; built to work together, not in silos.</p>
+      </div>
+      <div class="spotlight-grid" data-aos="fade-up" data-aos-delay="100">
+
+        <a href="service-strategic-marketing.html" class="spotlight-item">
+          <div class="sp-num">01</div>
+          <div class="service-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M14 6h7v7"/></svg></div>
+          <h3>Strategic Marketing</h3>
+          <p>Data-backed strategies built around your goals, your audience, and your budget.</p>
+        </a>
+        <a href="service-creative-design.html" class="spotlight-item">
+          <div class="sp-num">02</div>
+          <div class="service-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg></div>
+          <h3>Creative Design</h3>
+          <p>Scroll-stopping branding, ad creatives, and landing pages that make your audience stop and take notice.</p>
+        </a>
+        <a href="service-automation.html" class="spotlight-item">
+          <div class="sp-num">03</div>
+          <div class="service-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></div>
+          <h3>Automation Services</h3>
+          <p>Streamlined workflows and smart automation so your leads never fall through the cracks.</p>
+        </a>
+        <a href="service-technical-solutions.html" class="spotlight-item">
+          <div class="sp-num">04</div>
+          <div class="service-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div>
+          <h3>Technical Solutions</h3>
+          <p>Turn digital hiccups into seamless, high-converting experiences.</p>
+        </a>
+        <a href="service-seo.html" class="spotlight-item">
+          <div class="sp-num">05</div>
+          <div class="service-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/><path d="M8 11h6M11 8v6"/></svg></div>
+          <h3>Search Engine Optimization</h3>
+          <p>Fine-tune your website so search engines — and your customers — find you first, organically.</p>
+        </a>
+        <a href="service-social-media.html" class="spotlight-item">
+          <div class="sp-num">06</div>
+          <div class="service-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.6 10.5l6.8-3.9M8.6 13.5l6.8 3.9"/></svg></div>
+          <h3>Social Media Management</h3>
+          <p>Hands-free social success — while you run your business, we make sure your brand shines everywhere.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-dark">
+    <div class="container">
+      <div class="grid g-2" style="align-items:center;gap:56px;">
+        <div class="photo-collage" data-aos="fade-right">
+          <div class="pc-bar"></div>
+          <div class="pc-back"><img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=900&q=80" alt="Scale My Marketing team meeting"></div>
+          <div class="pc-front"><img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=700&q=80" alt="Client work in progress"></div>
+        </div>
+        <div data-aos="fade-left">
+          <div class="eyebrow">Our Story</div>
+          <h2>We're the growth partner Delhi brands actually trust <span class="dot-accent">.</span></h2>
+          <p>Scale My Marketing started with a simple frustration: too many agencies were reporting impressions and likes while client revenue stayed flat. We build growth engines around real ROI &mdash; for fitness coaches, wellness practitioners, financial advisors, and D2C brands across India.</p>
+          <div class="since-row">
+            <div class="since-badge">Since<br/>2019</div>
+            <div class="rule"></div>
+            <div style="max-width:260px;"><p style="margin:0;font-size:13.5px;">Building growth engines for ambitious brands across Delhi and beyond.</p></div>
+          </div>
+          <a href="about.html" class="btn btn-primary">Discover More</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-dark live-section" style="background-image:url('https://images.unsplash.com/photo-1556740738-b6a63e27c4df?auto=format&fit=crop&w=1600&q=80');">
+    <div class="container">
+      <div class="section-head" data-aos="fade-up">
+        <div class="eyebrow">Experience Us Live</div>
+        <h2>An agency that gets excited about your growth <span class="dot-accent">.</span></h2>
+      </div>
+      <div class="live-wrap" data-aos="zoom-in">
+        <div class="live-circle">
+          <div class="live-play" id="livePlayBtn" role="button" aria-label="Play video"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="6 3 20 12 6 21 6 3"/></svg></div>
+          <div class="lc-inner">
+            <p>We treat every client account like it's our own business on the line.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="video-modal" id="videoModal">
+    <div class="video-modal-backdrop" data-close-modal></div>
+    <div class="video-modal-box">
+      <button class="video-modal-close" data-close-modal aria-label="Close video">&times;</button>
+      <!-- TODO: replace src below with your real brand video -->
+      <video id="liveVideo" controls playsinline>
+        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  </div>
+
+  <section class="bg-dark">
+    <div class="container">
+      <div class="section-head" data-aos="fade-up">
+        <div class="eyebrow">How We Work</div>
+        <h2>We do more than just marketing across platforms <span class="dot-accent">.</span></h2>
+      </div>
+      <div class="grid g-2" style="gap:56px;align-items:flex-start;">
+        <div data-aos="fade-right">
+          <div class="about-photo" style="margin-bottom:26px;">
+            <div style="aspect-ratio:4/3;background:var(--dark-2);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.3);font-family:var(--font);font-weight:700;font-size:13px;text-align:center;padding:20px;">Team at work photo goes here</div>
+          </div>
+          <p>Every engagement is anchored in digital marketing &mdash; paid, organic and automation working together so nothing falls through the cracks.</p>
+          <div class="progress-row">
+            <div class="pr-label"><span>Digital Marketing</span><span>90%</span></div>
+            <div class="progress-track"><div class="progress-fill" data-pct="90"></div></div>
+          </div>
+          <p class="placeholder-note" style="text-align:left;margin-top:4px;">Demo figure &mdash; happy to swap in your real number once you share it.</p>
+        </div>
+        <div data-aos="fade-left">
+          <p class="placeholder-note" style="text-align:left;margin-bottom:4px;">Sample FAQs below &mdash; confirm your real policies and I'll lock these in.</p>
+          <div class="faq-list">
+
+            <div class="faq-item open">
+              <button class="faq-q">
+                <span class="fq-num">01</span>
+                <span class="fq-title">Which digital marketing platforms are best for business growth?</span>
+                <span class="fq-icon">+</span>
+              </button>
+              <div class="faq-a"><p>The best platforms depend on your business and target audience. Google helps attract customers actively searching for services, while social platforms like Instagram and Facebook build brand awareness and engagement.</p></div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-q">
+                <span class="fq-num">02</span>
+                <span class="fq-title">Do I need to promote my business on multiple platforms?</span>
+                <span class="fq-icon">+</span>
+              </button>
+              <div class="faq-a"><p>Not always. We start with the 1&ndash;2 platforms where your audience already spends time and expand only once those are converting profitably &mdash; not a fixed bundle sold upfront.</p></div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-q">
+                <span class="fq-num">03</span>
+                <span class="fq-title">How do you choose the right platform for marketing?</span>
+                <span class="fq-icon">+</span>
+              </button>
+              <div class="faq-a"><p>We look at your audience behaviour, sales cycle and budget, then run small test campaigns before committing spend at scale &mdash; decisions backed by data, not guesswork.</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-dark">
+    <div class="container">
+      <div class="section-head" data-aos="fade-up">
+        <div class="eyebrow">Work Showcase</div>
+        <h2>Case studies, once they're in <span class="dot-accent">.</span></h2>
+        <p>This preview is a working template &mdash; send over real projects and I'll drop them straight in.</p>
+      </div>
+      <div class="filter-bar" data-aos="fade-up">
+        <button class="filter-btn active" data-filter="all">All Work <span class="fb-count">[8]</span></button><button class="filter-btn" data-filter="Fitness">Fitness</button><button class="filter-btn" data-filter="Wellness">Wellness</button><button class="filter-btn" data-filter="Finance">Finance</button><button class="filter-btn" data-filter="D2C">D2C</button>
+      </div>
+      <div class="grid g-3">
+
+        <div class="portfolio-card" data-cat="Fitness" data-aos="fade-up" data-aos-delay="0">
+          <div class="portfolio-thumb" style="background-image:url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=700&q=80');">
+            <div class="pf-overlay"><span class="cat">Fitness</span><h3>[ Client / Project Name ]</h3><p>Short line on what we did and the result.</p></div>
+          </div>
+        </div>
+        <div class="portfolio-card" data-cat="Fitness" data-aos="fade-up" data-aos-delay="80">
+          <div class="portfolio-thumb" style="background-image:url('https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=700&q=80');">
+            <div class="pf-overlay"><span class="cat">Fitness</span><h3>[ Client / Project Name ]</h3><p>Short line on what we did and the result.</p></div>
+          </div>
+        </div>
+        <div class="portfolio-card" data-cat="Wellness" data-aos="fade-up" data-aos-delay="160">
+          <div class="portfolio-thumb" style="background-image:url('https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=700&q=80');">
+            <div class="pf-overlay"><span class="cat">Wellness</span><h3>[ Client / Project Name ]</h3><p>Short line on what we did and the result.</p></div>
+          </div>
+        </div>
+        <div class="portfolio-card" data-cat="Wellness" data-aos="fade-up" data-aos-delay="0">
+          <div class="portfolio-thumb" style="background-image:url('https://images.unsplash.com/photo-1591343395902-1707527ec27a?auto=format&fit=crop&w=700&q=80');">
+            <div class="pf-overlay"><span class="cat">Wellness</span><h3>[ Client / Project Name ]</h3><p>Short line on what we did and the result.</p></div>
+          </div>
+        </div>
+        <div class="portfolio-card" data-cat="Finance" data-aos="fade-up" data-aos-delay="80">
+          <div class="portfolio-thumb" style="background-image:url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=700&q=80');">
+            <div class="pf-overlay"><span class="cat">Finance</span><h3>[ Client / Project Name ]</h3><p>Short line on what we did and the result.</p></div>
+          </div>
+        </div>
+        <div class="portfolio-card" data-cat="Finance" data-aos="fade-up" data-aos-delay="160">
+          <div class="portfolio-thumb" style="background-image:url('https://images.unsplash.com/photo-1579621970795-87facc2f976d?auto=format&fit=crop&w=700&q=80');">
+            <div class="pf-overlay"><span class="cat">Finance</span><h3>[ Client / Project Name ]</h3><p>Short line on what we did and the result.</p></div>
+          </div>
+        </div>
+        <div class="portfolio-card" data-cat="D2C" data-aos="fade-up" data-aos-delay="0">
+          <div class="portfolio-thumb" style="background-image:url('https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=700&q=80');">
+            <div class="pf-overlay"><span class="cat">D2C</span><h3>[ Client / Project Name ]</h3><p>Short line on what we did and the result.</p></div>
+          </div>
+        </div>
+        <div class="portfolio-card" data-cat="D2C" data-aos="fade-up" data-aos-delay="80">
+          <div class="portfolio-thumb" style="background-image:url('https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=700&q=80');">
+            <div class="pf-overlay"><span class="cat">D2C</span><h3>[ Client / Project Name ]</h3><p>Short line on what we did and the result.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="parallax-stats">
+    <div class="container">
+      <div class="grid g-4">
+        <!-- DEMO STATS — replace with your real figures -->
+        <div class="stat" data-aos="zoom-in" data-aos-delay="0"><strong><span data-count="240" data-suffix="+">0</span></strong><span>Campaigns Launched</span></div>
+        <div class="stat" data-aos="zoom-in" data-aos-delay="100"><strong><span data-count="60" data-suffix="+">0</span></strong><span>Active Clients</span></div>
+        <div class="stat" data-aos="zoom-in" data-aos-delay="200"><strong><span data-count="48" data-suffix="h">0</span></strong><span>Avg. Response Time</span></div>
+        <div class="stat" data-aos="zoom-in" data-aos-delay="300"><strong><span data-count="98" data-suffix="%">0</span></strong><span>Client Retention</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-dark">
+    <div class="container">
+      <div class="grid g-2" style="align-items:start;gap:56px;">
+        <div data-aos="fade-right">
+          <div class="quote-bubble quote-bubble--overlap">
+            <p>We are committed to delivering high-quality digital solutions that help businesses grow.</p>
+          </div>
+          <div class="value-row">
+            <div class="num">01</div>
+            <div><div class="vr-title">Data-Backed Strategy</div><div class="vr-sub">Core Approach</div></div>
+          </div>
+          <div class="value-row">
+            <div class="num">02</div>
+            <div><div class="vr-title">Full-Funnel Execution</div><div class="vr-sub">Core Approach</div></div>
+          </div>
+        </div>
+        <div data-aos="fade-left">
+          <h2>We're trusted by growing brands <span class="dot-accent">.</span></h2>
+          <p>Fitness coaches, wellness practitioners, financial advisors and D2C brands trust our approach to grow their online presence and generate real results.</p>
+          <div class="grid g-2" style="gap:40px;align-items:center;">
+            <div class="trust-photo"><img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=700&q=80" alt="Client meeting"></div>
+            <ul class="check-list">
+              <li><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Data-driven, ROI-first strategy</li>
+              <li><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Real transparency, no vanity metrics</li>
+              <li><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>One team across strategy, creative &amp; tech</li>
+              <li><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Built for fitness, wellness, finance &amp; D2C</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-dark">
+    <div class="container">
+      <div class="section-head" data-aos="fade-up">
+        <div class="eyebrow">Meet The Team</div>
+        <h2>The people behind the strategy <span class="dot-accent">.</span></h2>
+        <p>Names and photos are placeholders &mdash; send these over and I'll swap them in.</p>
+      </div>
+      <div class="grid g-4">
+
+        <div class="team-card" data-aos="fade-up" data-aos-delay="0">
+          <div class="team-photo">
+            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=500&q=80" alt="Founder & Strategy Lead">
+            <div class="tp-overlay"><div class="tp-social"><a href="#" aria-label="LinkedIn">in</a><a href="#" aria-label="Instagram">ig</a></div></div>
+          </div>
+          <h3>[ Add Name ]</h3>
+          <span>Founder & Strategy Lead</span>
+        </div>
+        <div class="team-card" data-aos="fade-up" data-aos-delay="80">
+          <div class="team-photo">
+            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=500&q=80" alt="Media Buying Lead">
+            <div class="tp-overlay"><div class="tp-social"><a href="#" aria-label="LinkedIn">in</a><a href="#" aria-label="Instagram">ig</a></div></div>
+          </div>
+          <h3>[ Add Name ]</h3>
+          <span>Media Buying Lead</span>
+        </div>
+        <div class="team-card" data-aos="fade-up" data-aos-delay="160">
+          <div class="team-photo">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=500&q=80" alt="Creative Director">
+            <div class="tp-overlay"><div class="tp-social"><a href="#" aria-label="LinkedIn">in</a><a href="#" aria-label="Instagram">ig</a></div></div>
+          </div>
+          <h3>[ Add Name ]</h3>
+          <span>Creative Director</span>
+        </div>
+        <div class="team-card" data-aos="fade-up" data-aos-delay="240">
+          <div class="team-photo">
+            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=500&q=80" alt="Client Success Manager">
+            <div class="tp-overlay"><div class="tp-social"><a href="#" aria-label="LinkedIn">in</a><a href="#" aria-label="Instagram">ig</a></div></div>
+          </div>
+          <h3>[ Add Name ]</h3>
+          <span>Client Success Manager</span>
+        </div>
+      </div>
+      <div style="text-align:center;margin-top:44px;" data-aos="fade-up">
+        <a href="about.html" class="btn btn-outline">Meet The Full Team</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="statement-band">
+    <div class="container">
+      <div class="st-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 11 14 11 22 21 10 13 10 13 2"/></svg></div>
+      <p class="statement" data-aos="fade-up">Great marketing is never done by one algorithm. <span class="accent">It's done by a team that owns the outcome.</span></p>
+    </div>
+  </section>
+
+  <section class="bg-dark">
+    <div class="container">
+      <div class="section-head" data-aos="fade-up">
+        <div class="eyebrow">From The Blog</div>
+        <h2>Latest news &amp; articles <span class="dot-accent">.</span></h2>
+      </div>
+      <div class="blog-carousel" id="blogCarousel">
+        <div class="blog-track" id="blogTrack">
+
+          <article class="blog-card">
+            <div class="blog-thumb" style="background-image:url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=700&q=80');">
+              <div class="blog-meta-bar"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>15 Mar, 2026</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/></svg>Admin</span></div>
+            </div>
+            <div class="bc-body">
+              <h3>How Long Does SEO Take to Work? Realistic SEO Timeline</h3>
+              <a href="https://scalemymarketing.net/blog/" target="_blank" rel="noopener" class="blog-arrow" aria-label="Read article"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+            </div>
+          </article>
+
+          <article class="blog-card">
+            <div class="blog-thumb" style="background-image:url('https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=700&q=80');">
+              <div class="blog-meta-bar"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>22 Mar, 2026</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/></svg>Admin</span></div>
+            </div>
+            <div class="bc-body">
+              <h3>5 Signs Your Ad Spend Is Being Wasted</h3>
+              <a href="blog.html" class="blog-arrow" aria-label="Read article"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+            </div>
+          </article>
+
+          <article class="blog-card">
+            <div class="blog-thumb" style="background-image:url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=700&q=80');">
+              <div class="blog-meta-bar"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>29 Mar, 2026</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/></svg>Admin</span></div>
+            </div>
+            <div class="bc-body">
+              <h3>Why Vanity Metrics Are Killing Your Marketing Budget</h3>
+              <a href="blog.html" class="blog-arrow" aria-label="Read article"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+            </div>
+          </article>
+
+          <article class="blog-card">
+            <div class="blog-thumb" style="background-image:url('https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=700&q=80');">
+              <div class="blog-meta-bar"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>5 Apr, 2026</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/></svg>Admin</span></div>
+            </div>
+            <div class="bc-body">
+              <h3>The Real Cost Of A Bad Landing Page</h3>
+              <a href="blog.html" class="blog-arrow" aria-label="Read article"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+            </div>
+          </article>
+
+          <article class="blog-card">
+            <div class="blog-thumb" style="background-image:url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=700&q=80');">
+              <div class="blog-meta-bar"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>12 Apr, 2026</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/></svg>Admin</span></div>
+            </div>
+            <div class="bc-body">
+              <h3>How Fitness Coaches Can Build A Predictable Lead Funnel</h3>
+              <a href="blog.html" class="blog-arrow" aria-label="Read article"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+            </div>
+          </article>
+
+        </div>
+        <div class="blog-nav">
+          <button class="blog-arrow-nav blog-prev" aria-label="Previous article"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="15 5 8 12 15 19"/></svg></button>
+          <button class="blog-arrow-nav blog-next" aria-label="Next article"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-dark">
+    <div class="container">
+      <div class="section-head" data-aos="fade-up">
+        <div class="eyebrow">Client Voices</div>
+        <h2>What brands say after working with us <span class="dot-accent">.</span></h2>
+      </div>
+      <div data-aos="fade-up" data-aos-delay="100">
+  <div class="t-carousel" style="max-width:780px;margin:0 auto;">
+    <div style="overflow:hidden;border-radius:20px;">
+      <div class="t-track" style="display:flex;transition:transform .5s cubic-bezier(.22,.9,.34,1);">
+
+        <div class="t-slide" style="min-width:100%;padding:4px;">
+          <div class="testimonial-card" style="margin:0 auto;">
+            <div class="quote-mark">&ldquo;</div>
+            <p>Working with Scale My Marketing completely transformed our Instagram presence — the growth felt organic and aligned with our audience.</p>
+            <div class="testimonial-person">
+              <div class="testimonial-avatar">A</div>
+              <div><strong>Abhishek</strong><span>Verified Client</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="t-slide" style="min-width:100%;padding:4px;">
+          <div class="testimonial-card" style="margin:0 auto;">
+            <div class="quote-mark">&ldquo;</div>
+            <p>Their team helped us build our brand from scratch — we still can't believe we crossed 300K followers within months.</p>
+            <div class="testimonial-person">
+              <div class="testimonial-avatar">S</div>
+              <div><strong>Sachin</strong><span>Verified Client</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="t-slide" style="min-width:100%;padding:4px;">
+          <div class="testimonial-card" style="margin:0 auto;">
+            <div class="quote-mark">&ldquo;</div>
+            <p>A fresh creative perspective changed everything — our reels now reach lakhs and engagement has never been better.</p>
+            <div class="testimonial-person">
+              <div class="testimonial-avatar">R</div>
+              <div><strong>Rajesh</strong><span>Verified Client</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="t-slide" style="min-width:100%;padding:4px;">
+          <div class="testimonial-card" style="margin:0 auto;">
+            <div class="quote-mark">&ldquo;</div>
+            <p>Their strategy turned our Instagram into a genuine lead magnet — bookings have never been this consistent.</p>
+            <div class="testimonial-person">
+              <div class="testimonial-avatar">R</div>
+              <div><strong>Rajat</strong><span>Verified Client</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="display:flex;align-items:center;justify-content:center;gap:18px;margin-top:26px;">
+      <button class="t-prev btn btn-outline" style="padding:10px 16px;">&larr;</button>
+      <div class="t-dots" style="display:flex;gap:8px;"></div>
+      <button class="t-next btn btn-outline" style="padding:10px 16px;">&rarr;</button>
+    </div>
+  </div>
+  <style>.t-dot{width:9px;height:9px;border-radius:50%;background:rgba(255,255,255,.25);border:none;cursor:pointer;}.t-dot.active{background:var(--accent);width:22px;border-radius:6px;}</style></div>
+    </div>
+  </section>
+
+  <section class="bg-dark">
+    <div class="container">
+      <div class="cta-band" data-aos="zoom-in">
+        <div class="container-inner">
+          <div>
+            <h2>Ready for marketing that actually pays off <span class="dot-accent">.</span></h2>
+            <p>Book a free growth strategy call — no generic pitch, just a plan built around your numbers.</p>
+          </div>
+          <div style="display:flex;gap:14px;flex-wrap:wrap;">
+            <a href="contact.html" class="btn btn-primary">Book Free Strategy Call</a>
+            <a href="https://wa.me/918447836257" target="_blank" rel="noopener" class="btn btn-light">Chat on WhatsApp</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a href="index.html" class="brand" style="font-size:20px;"><span class="badge" style="width:34px;height:34px;font-size:16px;">SM</span>Scale My Marketing</a>
+          <p style="color:rgba(255,255,255,.5);font-size:14px;font-family:var(--font);">Performance marketing &amp; digital growth agency in Delhi &mdash; built for measurable ROI, not vanity metrics.</p>
+          <div class="social-row">
+            <a href="https://www.facebook.com/profile.php?id=61551716025953" target="_blank" rel="noopener" aria-label="Facebook">f</a>
+            <a href="https://www.instagram.com/scalemymarketing" target="_blank" rel="noopener" aria-label="Instagram">ig</a>
+            <a href="https://www.linkedin.com/company/scale-my-marketingg" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>
+          </div>
+        </div>
+        <div>
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="testimonial.html">Testimonials</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Services</h4>
+          <ul>
+            <li><a href="service-strategic-marketing.html">Strategic Marketing</a></li>
+            <li><a href="service-creative-design.html">Creative Design</a></li>
+            <li><a href="service-automation.html">Automation Services</a></li>
+            <li><a href="service-technical-solutions.html">Technical Solutions</a></li>
+            <li><a href="service-seo.html">SEO</a></li>
+            <li><a href="service-social-media.html">Social Media Management</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="tel:+918447836257">+91 84478 36257</a></li>
+            <li><a href="mailto:consult@scalemymarketing.net">consult@scalemymarketing.net</a></li>
+            <li><a href="https://wa.me/918447836257" target="_blank" rel="noopener">WhatsApp Us</a></li>
+            <li><span style="color:rgba(255,255,255,.6);">Delhi, India</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 Scale My Marketing. All rights reserved.</span>
+        <span><a href="privacy-policy.html">Privacy Policy</a> &nbsp;&middot;&nbsp; <a href="terms.html">Terms</a> &nbsp;&middot;&nbsp; <a href="refund-policy.html">Refund Policy</a></span>
+      </div>
+    </div>
+  </footer>
+  <a href="https://wa.me/918447836257" target="_blank" rel="noopener" class="float-wa" aria-label="Chat on WhatsApp">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.87.5 3.62 1.44 5.13L2 22l5.13-1.55a9.9 9.9 0 0 0 4.91 1.31h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.87 9.87 0 0 0 12.04 2zm5.79 14.02c-.24.68-1.4 1.3-1.93 1.38-.5.08-1.12.11-1.8-.11-.42-.13-.95-.31-1.64-.6-2.88-1.24-4.76-4.14-4.9-4.33-.14-.19-1.17-1.55-1.17-2.96 0-1.4.74-2.09 1-2.38.26-.28.56-.35.75-.35.19 0 .38 0 .54.01.17.01.4-.07.63.48.24.57.81 1.98.88 2.12.07.14.12.31.02.5-.09.19-.14.31-.28.48-.14.17-.29.37-.42.5-.14.14-.28.29-.12.57.16.28.72 1.19 1.55 1.93 1.06.95 1.96 1.24 2.24 1.38.28.14.44.12.6-.07.17-.19.71-.83.9-1.11.19-.28.38-.24.63-.14.26.09 1.64.77 1.92.91.28.14.47.21.54.33.07.12.07.68-.17 1.36z"/></svg>
+  </a>
+  <script>
+// Scale My Marketing — site interactions (vanilla JS, no external deps)
+document.addEventListener('DOMContentLoaded', () => {
+
+  /* Sticky header */
+  const header = document.querySelector('.site-header');
+  const onScroll = () => {
+    if (!header) return;
+    if (window.scrollY > 40) header.classList.add('is-scrolled');
+    else header.classList.remove('is-scrolled');
+  };
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive: true });
+
+  /* Mobile nav */
+  const toggle = document.querySelector('.nav-toggle');
+  const nav = document.querySelector('.nav');
+  const scrim = document.querySelector('.nav-scrim');
+  const closeNav = () => { nav?.classList.remove('open'); scrim?.classList.remove('open'); toggle?.classList.remove('open'); document.body.style.overflow = ''; };
+  const openNav = () => { nav?.classList.add('open'); scrim?.classList.add('open'); toggle?.classList.add('open'); document.body.style.overflow = 'hidden'; };
+  toggle?.addEventListener('click', () => { nav?.classList.contains('open') ? closeNav() : openNav(); });
+  scrim?.addEventListener('click', closeNav);
+  nav?.querySelectorAll('a').forEach(a => a.addEventListener('click', closeNav));
+
+  /* Scroll reveal (data-aos) */
+  const revealEls = document.querySelectorAll('[data-aos]');
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const delay = entry.target.getAttribute('data-aos-delay') || 0;
+          setTimeout(() => entry.target.classList.add('aos-animate'), Number(delay));
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    revealEls.forEach(el => io.observe(el));
+  } else {
+    revealEls.forEach(el => el.classList.add('aos-animate'));
+  }
+
+  /* Animated stat counters */
+  const counters = document.querySelectorAll('[data-count]');
+  const animateCount = (el) => {
+    const target = parseFloat(el.getAttribute('data-count'));
+    const suffix = el.getAttribute('data-suffix') || '';
+    const dur = 1400;
+    const start = performance.now();
+    const step = (now) => {
+      const p = Math.min((now - start) / dur, 1);
+      const eased = 1 - Math.pow(1 - p, 3);
+      const val = Math.round(target * eased);
+      el.textContent = val + suffix;
+      if (p < 1) requestAnimationFrame(step);
+      else el.textContent = target + suffix;
+    };
+    requestAnimationFrame(step);
+  };
+  if (counters.length && 'IntersectionObserver' in window) {
+    const cio = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) { animateCount(entry.target); cio.unobserve(entry.target); }
+      });
+    }, { threshold: 0.4 });
+    counters.forEach(c => cio.observe(c));
+  }
+
+  /* Testimonial carousel */
+  const track = document.querySelector('.t-track');
+  if (track) {
+    const slides = track.querySelectorAll('.t-slide');
+    const dotsWrap = document.querySelector('.t-dots');
+    let idx = 0;
+    slides.forEach((_, i) => {
+      const d = document.createElement('button');
+      d.className = 't-dot' + (i === 0 ? ' active' : '');
+      d.addEventListener('click', () => goTo(i));
+      dotsWrap?.appendChild(d);
+    });
+    const dots = dotsWrap ? dotsWrap.querySelectorAll('.t-dot') : [];
+    function goTo(i) {
+      idx = (i + slides.length) % slides.length;
+      track.style.transform = `translateX(-${idx * 100}%)`;
+      dots.forEach((d, di) => d.classList.toggle('active', di === idx));
+    }
+    document.querySelector('.t-next')?.addEventListener('click', () => goTo(idx + 1));
+    document.querySelector('.t-prev')?.addEventListener('click', () => goTo(idx - 1));
+    let auto = setInterval(() => goTo(idx + 1), 5000);
+    track.closest('.t-carousel')?.addEventListener('mouseenter', () => clearInterval(auto));
+    track.closest('.t-carousel')?.addEventListener('mouseleave', () => { auto = setInterval(() => goTo(idx + 1), 5000); });
+  }
+
+  /* Portfolio filter */
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const pfCards = document.querySelectorAll('.portfolio-card');
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const cat = btn.getAttribute('data-filter');
+      pfCards.forEach(card => {
+        const show = cat === 'all' || card.getAttribute('data-cat') === cat;
+        card.style.display = show ? '' : 'none';
+      });
+    });
+  });
+
+  /* Pricing monthly/annual toggle */
+  const priceToggle = document.querySelector('.price-toggle');
+  if (priceToggle) {
+    const monthlyBtn = priceToggle.querySelector('[data-term="monthly"]');
+    const annualBtn = priceToggle.querySelector('[data-term="annual"]');
+    const setTerm = (term) => {
+      document.querySelectorAll('[data-monthly]').forEach(el => {
+        el.textContent = term === 'monthly' ? el.getAttribute('data-monthly') : el.getAttribute('data-annual');
+      });
+      monthlyBtn.classList.toggle('active', term === 'monthly');
+      annualBtn.classList.toggle('active', term === 'annual');
+    };
+    monthlyBtn?.addEventListener('click', () => setTerm('monthly'));
+    annualBtn?.addEventListener('click', () => setTerm('annual'));
+  }
+
+  /* Hero carousel — crossfade, autoplay, arrows + dots (same behavior as reference site's Owl Carousel hero) */
+  const heroSlidesWrap = document.querySelector('.hero-slides');
+  if (heroSlidesWrap) {
+    const slides = heroSlidesWrap.querySelectorAll('.hero-slide');
+    const bodies = document.querySelectorAll('.hero-slide-body');
+    const dotsWrap = document.querySelector('.hero-dots');
+    let hIdx = 0;
+    slides.forEach((_, i) => {
+      const d = document.createElement('button');
+      d.className = 'hero-dot' + (i === 0 ? ' active' : '');
+      d.setAttribute('aria-label', 'Go to slide ' + (i + 1));
+      d.addEventListener('click', () => goToHero(i));
+      dotsWrap?.appendChild(d);
+    });
+    const hDots = dotsWrap ? dotsWrap.querySelectorAll('.hero-dot') : [];
+    function goToHero(i) {
+      hIdx = (i + slides.length) % slides.length;
+      slides.forEach((s, si) => s.classList.toggle('active', si === hIdx));
+      bodies.forEach((b, bi) => b.classList.toggle('active', bi === hIdx));
+      hDots.forEach((d, di) => d.classList.toggle('active', di === hIdx));
+    }
+    document.querySelector('.hero-next')?.addEventListener('click', () => goToHero(hIdx + 1));
+    document.querySelector('.hero-prev')?.addEventListener('click', () => goToHero(hIdx - 1));
+    if (slides.length > 1) {
+      const HERO_INTERVAL = 1500;
+      let hAuto = setInterval(() => goToHero(hIdx + 1), HERO_INTERVAL);
+      const heroEl = document.querySelector('.hero');
+      heroEl?.addEventListener('mouseenter', () => clearInterval(hAuto));
+      heroEl?.addEventListener('mouseleave', () => { hAuto = setInterval(() => goToHero(hIdx + 1), HERO_INTERVAL); });
+    }
+  }
+
+  /* Video popup modal (Experience Us Live play button) */
+  const videoModal = document.getElementById('videoModal');
+  const livePlayBtn = document.getElementById('livePlayBtn');
+  const liveVideo = document.getElementById('liveVideo');
+  livePlayBtn?.addEventListener('click', () => { videoModal?.classList.add('open'); });
+  videoModal?.querySelectorAll('[data-close-modal]').forEach(el => {
+    el.addEventListener('click', () => {
+      videoModal.classList.remove('open');
+      liveVideo?.pause();
+    });
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && videoModal?.classList.contains('open')) {
+      videoModal.classList.remove('open');
+      liveVideo?.pause();
+    }
+  });
+
+  /* Blog carousel — center-mode, autoplay */
+  const blogCarousel = document.getElementById('blogCarousel');
+  const blogTrack = document.getElementById('blogTrack');
+  if (blogCarousel && blogTrack) {
+    const blogCards = Array.from(blogTrack.children);
+    let bIdx = Math.floor(blogCards.length / 2);
+    function centerBlog(i) {
+      bIdx = (i + blogCards.length) % blogCards.length;
+      blogCards.forEach((c, ci) => c.classList.toggle('is-center', ci === bIdx));
+      requestAnimationFrame(() => {
+        const card = blogCards[bIdx];
+        const offset = card.offsetLeft + card.offsetWidth / 2 - blogCarousel.offsetWidth / 2;
+        blogTrack.style.transform = `translateX(${-offset}px)`;
+      });
+    }
+    centerBlog(bIdx);
+    window.addEventListener('resize', () => centerBlog(bIdx));
+    const BLOG_INTERVAL = 3500;
+    let blogAuto = setInterval(() => centerBlog(bIdx + 1), BLOG_INTERVAL);
+    const restartBlogAuto = () => { clearInterval(blogAuto); blogAuto = setInterval(() => centerBlog(bIdx + 1), BLOG_INTERVAL); };
+    blogCarousel.addEventListener('mouseenter', () => clearInterval(blogAuto));
+    blogCarousel.addEventListener('mouseleave', restartBlogAuto);
+    document.querySelector('.blog-prev')?.addEventListener('click', () => { centerBlog(bIdx - 1); restartBlogAuto(); });
+    document.querySelector('.blog-next')?.addEventListener('click', () => { centerBlog(bIdx + 1); restartBlogAuto(); });
+  }
+
+  /* Services spotlight grid — hover to highlight one, dim the rest */
+  const spotlightGrid = document.querySelector('.spotlight-grid');
+  if (spotlightGrid) {
+    const items = spotlightGrid.querySelectorAll('.spotlight-item');
+    const setActive = (el) => {
+      spotlightGrid.classList.add('dimming');
+      items.forEach(it => it.classList.toggle('is-active', it === el));
+    };
+    items.forEach(it => it.addEventListener('mouseenter', () => setActive(it)));
+    spotlightGrid.addEventListener('mouseleave', () => { spotlightGrid.classList.remove('dimming'); });
+  }
+
+  /* FAQ accordion (we-do section) */
+  const faqItems = document.querySelectorAll('.faq-item');
+  faqItems.forEach(item => {
+    const q = item.querySelector('.faq-q');
+    q?.addEventListener('click', () => {
+      const wasOpen = item.classList.contains('open');
+      faqItems.forEach(i => i.classList.remove('open'));
+      if (!wasOpen) item.classList.add('open');
+    });
+  });
+
+  /* Progress bars — animate fill when scrolled into view */
+  const progressFills = document.querySelectorAll('.progress-fill');
+  if (progressFills.length && 'IntersectionObserver' in window) {
+    const pio = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.width = entry.target.getAttribute('data-pct') + '%';
+          pio.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.4 });
+    progressFills.forEach(p => pio.observe(p));
+  }
+
+  /* Contact form -> mailto/WhatsApp fallback (no backend wired yet) */
+  const form = document.querySelector('#lead-form');
+  form?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const data = new FormData(form);
+    const msg = `Name: ${data.get('name')}%0AEmail: ${data.get('email')}%0APhone: ${data.get('phone')}%0AProject: ${data.get('message')}`;
+    window.open(`https://wa.me/918447836257?text=${msg}`, '_blank');
+  });
+});
+
+/* Page loader — hide once the page has fully finished loading */
+window.addEventListener('load', () => {
+  const pageLoader = document.getElementById('pageLoader');
+  if (!pageLoader) return;
+  setTimeout(() => {
+    pageLoader.classList.add('is-hidden');
+    setTimeout(() => pageLoader.remove(), 600);
+  }, 300);
+});
+
+  </script>
+</body>
+</html>
